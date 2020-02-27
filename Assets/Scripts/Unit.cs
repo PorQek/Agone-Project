@@ -10,6 +10,8 @@ public class Unit : MonoBehaviour
     public int tileSpeed; //ile tilesów ta jednostka może się poruszyć
     public bool hasMoved; //sprawdza czy ta jednostka poruszyła się już w tej turze
 
+    public float moveSpeed;
+
     private void Start()
     {
         gm = FindObjectOfType<GameMaster>();
@@ -21,6 +23,7 @@ public class Unit : MonoBehaviour
         {
             selected = false;
             gm.selectedUnit = null;
+            gm.ResetTiles();
         }
         else //jeżeli ta jednostka nie jest wybrana
         {
@@ -31,6 +34,8 @@ public class Unit : MonoBehaviour
 
             selected = true; //wybiera tą jednostkę
             gm.selectedUnit = this;
+
+            gm.ResetTiles();
             GetWalkableTiles();
         }
     }
@@ -41,7 +46,7 @@ public class Unit : MonoBehaviour
             return;
         }
 
-        foreach (Tile tile in FindObjectsOfType<Tile>())
+        foreach (Tile tile in FindObjectsOfType<Tile>()) //oblicza, gdzie jednostka może dojść i podświetla te tile
         {
             if (Mathf.Abs(transform.position.x - tile.transform.position.x) + Mathf.Abs(transform.position.y - tile.transform.position.y) <= tileSpeed)
             {
@@ -52,5 +57,27 @@ public class Unit : MonoBehaviour
 
             }
         }
+    }
+
+    public void Move(Vector2 tilePos) //funkcja przesuwająca jednostke na wyznaczony tile
+    {
+        gm.ResetTiles();
+        StartCoroutine(StartMovement(tilePos));        
+    }
+    IEnumerator StartMovement(Vector2 tilePos)
+    {
+        while(transform.position.x != tilePos.x)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(tilePos.x, transform.position.y), moveSpeed * Time.deltaTime);
+            yield return null;
+        }
+
+        while (transform.position.y != tilePos.y)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x, tilePos.y), moveSpeed * Time.deltaTime);
+            yield return null;
+        }
+
+        hasMoved = true;
     }
 }
