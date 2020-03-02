@@ -18,6 +18,8 @@ public class Unit : MonoBehaviour
     List<Unit> enemiesInRange = new List<Unit>(); //przechowuje inne jednostki, które znajdą się w zasięgu ataku
     public bool hasAttacked; //sprawdza czy ta jednostka już w tej turze atakowała
 
+    public GameObject attackIcon; //miejsce na ikone możliwości ataku danej jednostki
+
     private void Start()
     {
         gm = FindObjectOfType<GameMaster>();
@@ -25,6 +27,8 @@ public class Unit : MonoBehaviour
 
     private void OnMouseDown() //po kliknięciu na jednostkę
     {
+        ResetAttackIcons();
+
         if (selected == true) //jeżeli jednostka jest już wybrana - odwybiera ją
         {
             selected = false;
@@ -72,15 +76,24 @@ public class Unit : MonoBehaviour
     {
         enemiesInRange.Clear(); //w pierwszej kolejności czyści poprzednio zapisanych przeciwników w zasięgu
 
-        foreach (Unit unit in FindObjectsOfType<Unit>()) //sprawdza jednostki w zasięgu ataku
+        foreach (Unit unit in FindObjectsOfType<Unit>()) //dla wszystkich jednostek
         {
-            if (Mathf.Abs(transform.position.x - unit.transform.position.x) + Mathf.Abs(transform.position.y - unit.transform.position.y) <= attackRange)
+            if (Mathf.Abs(transform.position.x - unit.transform.position.x) + Mathf.Abs(transform.position.y - unit.transform.position.y) <= attackRange) //sprawdza które jednostki są w zasięgu ataku
             {
                 if (unit.playerNumber != gm.playerTurn && hasAttacked == false) //sprawdza czy znaleziona jednostka nie należy przypadkiem do gracza && nasza jednostka już atakowała
                 {
                     enemiesInRange.Add(unit); //dodaje do listy jednostki, które można zaatakować
+                    unit.attackIcon.SetActive(true); //włącza ikone ataku jednostce, którą właśnie dodaje do listy
                 }
             }
+        }
+    }
+
+    public void ResetAttackIcons() //funkcja, która ma wyłączać wszystkie aktyywne ikony ataku
+    {
+        foreach (Unit unit in FindObjectsOfType<Unit>()) //dla wszystkich jednostek
+        {
+            unit.attackIcon.SetActive(false);
         }
     }
 
@@ -104,6 +117,7 @@ public class Unit : MonoBehaviour
         }
 
         hasMoved = true;
+        ResetAttackIcons();
         GetEnemies();
     }
 }

@@ -36,7 +36,7 @@ public class GameMaster : MonoBehaviour
         }
     }
 
-    void EndTurn() //zmienia aktywnego gracza
+    void EndTurn() //zmienia aktywnego gracza, kończy ture
     {
         if (playerTurn == 1)
         {
@@ -54,9 +54,11 @@ public class GameMaster : MonoBehaviour
 
         ResetTiles();
 
-        foreach (Unit unit in FindObjectsOfType<Unit>()) //resetuje "zużycie" jednostek
+        foreach (Unit unit in FindObjectsOfType<Unit>()) //dla każdej jednostki
         {
             unit.hasMoved = false;
+            unit.attackIcon.SetActive(false);
+            unit.hasAttacked = false;
         }
     }
 }
