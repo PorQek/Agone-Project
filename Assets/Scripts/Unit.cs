@@ -14,6 +14,10 @@ public class Unit : MonoBehaviour
 
     public int playerNumber; //mówi do którego gracza należy ta jednostka
 
+    public int attackRange; //zasięg ataku jednostki
+    List<Unit> enemiesInRange = new List<Unit>(); //przechowuje inne jednostki, które znajdą się w zasięgu ataku
+    public bool hasAttacked; //sprawdza czy ta jednostka już w tej turze atakowała
+
     private void Start()
     {
         gm = FindObjectOfType<GameMaster>();
@@ -40,6 +44,7 @@ public class Unit : MonoBehaviour
                 gm.selectedUnit = this;
 
                 gm.ResetTiles();
+                GetEnemies();
                 GetWalkableTiles();
             }           
         }
@@ -59,7 +64,22 @@ public class Unit : MonoBehaviour
                 {
                     tile.Highlights();
                 }
+            }
+        }
+    }
 
+    void GetEnemies() //funkcja zwracająca jednostki, które można zaatakować
+    {
+        enemiesInRange.Clear(); //w pierwszej kolejności czyści poprzednio zapisanych przeciwników w zasięgu
+
+        foreach (Unit unit in FindObjectsOfType<Unit>()) //sprawdza jednostki w zasięgu ataku
+        {
+            if (Mathf.Abs(transform.position.x - unit.transform.position.x) + Mathf.Abs(transform.position.y - unit.transform.position.y) <= attackRange)
+            {
+                if (unit.playerNumber != gm.playerTurn && hasAttacked == false) //sprawdza czy znaleziona jednostka nie należy przypadkiem do gracza && nasza jednostka już atakowała
+                {
+                    enemiesInRange.Add(unit); //dodaje do listy jednostki, które można zaatakować
+                }
             }
         }
     }
@@ -84,5 +104,6 @@ public class Unit : MonoBehaviour
         }
 
         hasMoved = true;
+        GetEnemies();
     }
 }
