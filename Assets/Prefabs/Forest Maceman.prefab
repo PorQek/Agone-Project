@@ -228,3 +228,4 @@ MonoBehaviour:
   tileSpeed: 3
   hasMoved: 0
   moveSpeed: 5
+  playerNumber: 2

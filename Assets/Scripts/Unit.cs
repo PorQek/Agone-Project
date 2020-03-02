@@ -10,7 +10,9 @@ public class Unit : MonoBehaviour
     public int tileSpeed; //ile tilesów ta jednostka może się poruszyć
     public bool hasMoved; //sprawdza czy ta jednostka poruszyła się już w tej turze
 
-    public float moveSpeed;
+    public float moveSpeed; //prędkość poruszania się jednostki;
+
+    public int playerNumber; //mówi do którego gracza należy ta jednostka
 
     private void Start()
     {
@@ -27,16 +29,19 @@ public class Unit : MonoBehaviour
         }
         else //jeżeli ta jednostka nie jest wybrana
         {
-            if (gm.selectedUnit != null) //inna jednostka jest już wybrana - odwybiera ją
+            if (playerNumber == gm.playerTurn) //sprawdza czy odpowiedni gracz zaznacza tą jednostkę
             {
-                gm.selectedUnit.selected = false;
-            }
+                if (gm.selectedUnit != null) //inna jednostka jest już wybrana - odwybiera ją
+                {
+                    gm.selectedUnit.selected = false;
+                }
 
-            selected = true; //wybiera tą jednostkę
-            gm.selectedUnit = this;
+                selected = true; //wybiera tą jednostkę
+                gm.selectedUnit = this;
 
-            gm.ResetTiles();
-            GetWalkableTiles();
+                gm.ResetTiles();
+                GetWalkableTiles();
+            }           
         }
     }
     void GetWalkableTiles() //pokazuje tile na, które ta jednostka może się poruszyć
