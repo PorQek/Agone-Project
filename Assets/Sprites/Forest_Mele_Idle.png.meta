@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 1bb82dce8a936f045af5e6998d3dc470
+guid: cc44c48bc96625a4cb51e3df15480c1a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3376001316375108496
-    second: Warrior_Swordsman_Idle_0
+      213: -1923690436334380079
+    second: Forest_Mele_Idle_0
   - first:
-      213: -8495400047714259744
-    second: Warrior_Swordsman_Idle_1
+      213: -6976100297776828030
+    second: Forest_Mele_Idle_1
   - first:
-      213: 99096368078023011
-    second: Warrior_Swordsman_Idle_2
+      213: 5718038665055239977
+    second: Forest_Mele_Idle_2
   - first:
-      213: -3012027727039832299
-    second: Warrior_Swordsman_Idle_3
+      213: -7756217650533130510
+    second: Forest_Mele_Idle_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -122,7 +122,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Warrior_Swordsman_Idle_0
+      name: Forest_Mele_Idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -130,20 +130,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.52, y: 0.17}
+      pivot: {x: 0.48, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 074e53880b80621d0800000000000000
-      internalID: -3376001316375108496
+      spriteID: 1db19748dbdad45e0800000000000000
+      internalID: -1923690436334380079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_Swordsman_Idle_1
+      name: Forest_Mele_Idle_1
       rect:
         serializedVersion: 2
         x: 64
@@ -151,20 +151,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.52, y: 0.17}
+      pivot: {x: 0.48, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0eca72bcaa64a1a80800000000000000
-      internalID: -8495400047714259744
+      spriteID: 281f3897db9ef2f90800000000000000
+      internalID: -6976100297776828030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_Swordsman_Idle_2
+      name: Forest_Mele_Idle_2
       rect:
         serializedVersion: 2
         x: 0
@@ -172,20 +172,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.52, y: 0.17}
+      pivot: {x: 0.48, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36962d92f9f006100800000000000000
-      internalID: 99096368078023011
+      spriteID: 92ff092dedd8a5f40800000000000000
+      internalID: 5718038665055239977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_Swordsman_Idle_3
+      name: Forest_Mele_Idle_3
       rect:
         serializedVersion: 2
         x: 64
@@ -193,14 +193,14 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.5182147, y: 0.17}
+      pivot: {x: 0.48, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51fd92c9db02336d0800000000000000
-      internalID: -3012027727039832299
+      spriteID: 2fe9b5b14216c5490800000000000000
+      internalID: -7756217650533130510
       vertices: []
       indices: 
       edges: []
