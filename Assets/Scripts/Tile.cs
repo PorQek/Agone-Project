@@ -46,13 +46,13 @@ public class Tile : MonoBehaviour
         }
     }
 
-    public void Highlights()
+    public void Highlights() //podświetla tile
     {
         rend.color = HighlightedColor;
         isWalkable = true;
     }
 
-    public void Reset()
+    public void Reset() //reset podświetlenia tilów
     {
         rend.color = Color.white;
         isWalkable = false;

@@ -64,17 +64,17 @@ public class Unit : MonoBehaviour
         gm.ResetTiles();
         StartCoroutine(StartMovement(tilePos));        
     }
-    IEnumerator StartMovement(Vector2 tilePos)
+    IEnumerator StartMovement(Vector2 tilePos) 
     {
         while(transform.position.x != tilePos.x)
         {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(tilePos.x, transform.position.y), moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(tilePos.x, transform.position.y), moveSpeed * Time.deltaTime); //poruszanie się poziomo
             yield return null;
         }
 
         while (transform.position.y != tilePos.y)
         {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x, tilePos.y), moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x, tilePos.y), moveSpeed * Time.deltaTime); //poruszanie sie pionowo
             yield return null;
         }
 
