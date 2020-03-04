@@ -20,12 +20,11 @@ public class Unit : MonoBehaviour
 
     public GameObject attackIcon; //miejsce na ikone możliwości ataku danej jednostki
 
-    private Animator animator;
+    public Animator animator;
 
     private void Start()
     {
         gm = FindObjectOfType<GameMaster>();
-        animator = GetComponent<Animator>();
         animator.speed = Random.Range(0.9f, 1.1f);
     }
 
