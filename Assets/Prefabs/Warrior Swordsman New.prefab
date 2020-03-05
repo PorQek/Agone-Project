@@ -167,6 +167,8 @@ MonoBehaviour:
   attackDamage: 3
   defenseDamage: 2
   armor: 1
+  damageIcon: {fileID: 2209425789116781257, guid: db3bc58ff6570ad4183548e718b2f329,
+    type: 3}
   animator: {fileID: 8038847278023159427}
 --- !u!114 &3681630414740738446
 MonoBehaviour:

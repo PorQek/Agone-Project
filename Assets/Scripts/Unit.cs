@@ -25,6 +25,8 @@ public class Unit : MonoBehaviour
     public int defenseDamage; //punkty obrażeń jednostek kiedy się broni
     public int armor; //ogranicznik przyjmowanych obrażeń
 
+    public DamageIcon damageIcon;
+
     public Animator animator;
 
     private void Start()
@@ -81,11 +83,15 @@ public class Unit : MonoBehaviour
 
         if (enemyDamage >= 1)
         {
+            DamageIcon instance = Instantiate(damageIcon, enemy.transform.position, Quaternion.identity);
+            instance.Setup(enemyDamage); 
             enemy.health -= enemyDamage;
         }
 
         if (myDamage >= 1)
         {
+            DamageIcon instance = Instantiate(damageIcon, transform.position, Quaternion.identity);
+            instance.Setup(myDamage);
             health -= myDamage;
         }
 
