@@ -82,6 +82,10 @@ MonoBehaviour:
   attackRange: 1
   hasAttacked: 0
   attackIcon: {fileID: 3327616544893863071}
+  health: 5
+  attackDamage: 3
+  defenseDamage: 2
+  armor: 1
   animator: {fileID: 1460010461208937712}
 --- !u!114 &92152009005647827
 MonoBehaviour:

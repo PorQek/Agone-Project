@@ -20,12 +20,17 @@ public class Unit : MonoBehaviour
 
     public GameObject attackIcon; //miejsce na ikone możliwości ataku danej jednostki
 
+    public int health; //punkty życia jednostki
+    public int attackDamage; //punkty obrażeń jednostki podczas ataku
+    public int defenseDamage; //punkty obrażeń jednostek kiedy się broni
+    public int armor; //ogranicznik przyjmowanych obrażeń
+
     public Animator animator;
 
     private void Start()
     {
         gm = FindObjectOfType<GameMaster>();
-        animator.speed = Random.Range(0.9f, 1.1f);
+        animator.speed = Random.Range(0.9f, 1.1f); //losowa prędkość animacji jednostki w zakresie
     }
 
     private void OnMouseDown() //po kliknięciu na jednostkę
@@ -55,7 +60,48 @@ public class Unit : MonoBehaviour
                 GetWalkableTiles();
             }           
         }
+
+        Collider2D col = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), 0.15f); //w miejscu klikniecia tworzy okrągły collider
+        Unit unit = col.GetComponent<Unit>();
+        if (gm.selectedUnit != null) //jeżeli mamy wybraną jednostke
+        {
+            if (gm.selectedUnit.enemiesInRange.Contains(unit) && gm.selectedUnit.hasAttacked == false) //jeżeli wybrana jednostka ma w zasięgu przeciwnika i nie atakowała jeszcze w tej turze
+            {
+                gm.selectedUnit.Attack(unit);
+            }
+        }
     }
+
+    void Attack(Unit enemy)
+    {
+        hasAttacked = true;
+
+        int enemyDamage = attackDamage - enemy.armor; //ile obrażeń ta jednostka zada przeciwnikowi
+        int myDamage = enemy.defenseDamage - armor; //ile obrażeń przy ataku przeciwnika otrzyma ta jednostka
+
+        if (enemyDamage >= 1)
+        {
+            enemy.health -= enemyDamage;
+        }
+
+        if (myDamage >= 1)
+        {
+            health -= myDamage;
+        }
+
+        if (enemy.health <= 0)
+        {
+            Destroy(enemy.gameObject);
+            GetWalkableTiles();
+        }
+
+        if (health <= 0)
+        {
+            gm.ResetTiles();
+            Destroy(this.gameObject);
+        }
+    }
+
     void GetWalkableTiles() //pokazuje tile na, które ta jednostka może się poruszyć
     {
         if (hasMoved == true) //jeżeli ta jednostka już wcześniej się poruszyła - wyjście  funkcji
