@@ -8,6 +8,8 @@ public class DamageIcon : MonoBehaviour
 
     public float lifetime; //jak długo ikona będzie wyświetlana
 
+    public GameObject effect; //miejsce na particle przy znikaniu ikony
+
     private void Start()
     {
         Invoke("Destruction", lifetime);
@@ -19,6 +21,7 @@ public class DamageIcon : MonoBehaviour
 
     void Destruction()
     {
+        Instantiate(effect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
