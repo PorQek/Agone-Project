@@ -26,13 +26,17 @@ public class Unit : MonoBehaviour
     public int armor; //ogranicznik przyjmowanych obrażeń
 
     public DamageIcon damageIcon;
+    public GameObject deathEffect;
 
-    public Animator animator;
+    public Animator animator; //animator jednostki
+
+    private Animator camAnim; //animator kamery
 
     private void Start()
     {
         gm = FindObjectOfType<GameMaster>();
         animator.speed = Random.Range(0.9f, 1.1f); //losowa prędkość animacji jednostki w zakresie
+        camAnim = Camera.main.GetComponent<Animator>();
     }
 
     private void OnMouseDown() //po kliknięciu na jednostkę
@@ -76,6 +80,8 @@ public class Unit : MonoBehaviour
 
     void Attack(Unit enemy)
     {
+        camAnim.SetTrigger("shake");
+
         hasAttacked = true;
 
         int enemyDamage = attackDamage - enemy.armor; //ile obrażeń ta jednostka zada przeciwnikowi
@@ -97,12 +103,14 @@ public class Unit : MonoBehaviour
 
         if (enemy.health <= 0)
         {
+            Instantiate(deathEffect, enemy.transform.position, Quaternion.identity);
             Destroy(enemy.gameObject);
             GetWalkableTiles();
         }
 
         if (health <= 0)
         {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
             gm.ResetTiles();
             Destroy(this.gameObject);
         }

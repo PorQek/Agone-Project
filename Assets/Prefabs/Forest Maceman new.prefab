@@ -88,6 +88,8 @@ MonoBehaviour:
   armor: 1
   damageIcon: {fileID: 2209425789116781257, guid: db3bc58ff6570ad4183548e718b2f329,
     type: 3}
+  deathEffect: {fileID: 425810942908549842, guid: 85d92248b0ae05543b07e906057dbc55,
+    type: 3}
   animator: {fileID: 1460010461208937712}
 --- !u!114 &92152009005647827
 MonoBehaviour:
