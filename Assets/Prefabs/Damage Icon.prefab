@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5504660234898219682}
   - component: {fileID: 7830782414765434497}
   - component: {fileID: 2209425789116781257}
+  - component: {fileID: 824068472}
   m_Layer: 0
   m_Name: Damage Icon
   m_TagString: Untagged
@@ -103,3 +104,22 @@ MonoBehaviour:
   - {fileID: -6266785942605674651, guid: 694df657a6ca9124b80e12554f846c2a, type: 3}
   - {fileID: -2622146273293217231, guid: 694df657a6ca9124b80e12554f846c2a, type: 3}
   lifetime: 1.5
+--- !u!95 &824068472
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7409418399415178620}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d8d5144ed6cb77d4bad21819966b9c53, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
