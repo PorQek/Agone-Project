@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: 1bb82dce8a936f045af5e6998d3dc470
+guid: 3da8e9301e39b7d4284bf6c5e3b60ce3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3376001316375108496
-    second: Warrior_Swordsman_Idle_0
+      213: 3768534298237970586
+    second: Forest_King_0
   - first:
-      213: -8495400047714259744
-    second: Warrior_Swordsman_Idle_1
+      213: -7610919383684377389
+    second: Forest_King_1
   - first:
-      213: 99096368078023011
-    second: Warrior_Swordsman_Idle_2
-  - first:
-      213: -3012027727039832299
-    second: Warrior_Swordsman_Idle_3
+      213: -4449859856294817294
+    second: Forest_King_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -122,7 +119,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Warrior_Swordsman_Idle_0
+      name: Forest_King_0
       rect:
         serializedVersion: 2
         x: 0
@@ -130,20 +127,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.52, y: 0.17}
+      pivot: {x: 0.48, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 074e53880b80621d0800000000000000
-      internalID: -3376001316375108496
+      spriteID: a98a95a4af58c4430800000000000000
+      internalID: 3768534298237970586
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_Swordsman_Idle_1
+      name: Forest_King_1
       rect:
         serializedVersion: 2
         x: 64
@@ -151,20 +148,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.52, y: 0.17}
+      pivot: {x: 0.48, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0eca72bcaa64a1a80800000000000000
-      internalID: -8495400047714259744
+      spriteID: 3d49b591525906690800000000000000
+      internalID: -7610919383684377389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_Swordsman_Idle_2
+      name: Forest_King_2
       rect:
         serializedVersion: 2
         x: 0
@@ -172,35 +169,14 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.52, y: 0.17}
+      pivot: {x: 0.48, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36962d92f9f006100800000000000000
-      internalID: 99096368078023011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Warrior_Swordsman_Idle_3
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5182147, y: 0.17}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 51fd92c9db02336d0800000000000000
-      internalID: -3012027727039832299
+      spriteID: 2f1d64d790cee32c0800000000000000
+      internalID: -4449859856294817294
       vertices: []
       indices: 
       edges: []
