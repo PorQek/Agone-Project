@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Unit : MonoBehaviour
 {
@@ -32,11 +33,23 @@ public class Unit : MonoBehaviour
 
     private Animator camAnim; //animator kamery
 
+    public Text kingHealth;
+    public bool isKing;
+
     private void Start()
     {
         gm = FindObjectOfType<GameMaster>();
         animator.speed = Random.Range(0.9f, 1.1f); //losowa prędkość animacji jednostki w zakresie
         camAnim = Camera.main.GetComponent<Animator>();
+        UpdateKingHealth();
+    }
+
+    public void UpdateKingHealth()
+    {
+        if (isKing == true)
+        {
+            kingHealth.text = health.ToString();
+        }
     }
 
     private void OnMouseDown() //po kliknięciu na jednostkę
@@ -92,6 +105,7 @@ public class Unit : MonoBehaviour
             DamageIcon instance = Instantiate(damageIcon, enemy.transform.position, Quaternion.identity);
             instance.Setup(enemyDamage); 
             enemy.health -= enemyDamage;
+            enemy.UpdateKingHealth();
         }
 
         if (myDamage >= 1)
@@ -99,6 +113,7 @@ public class Unit : MonoBehaviour
             DamageIcon instance = Instantiate(damageIcon, transform.position, Quaternion.identity);
             instance.Setup(myDamage);
             health -= myDamage;
+            UpdateKingHealth();;
         }
 
         if (enemy.health <= 0)

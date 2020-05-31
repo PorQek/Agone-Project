@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class GameMaster : MonoBehaviour
     public int playerTurn = 1; //zapisuje który gracz ma teraz ture: 1 lewo, 2 prawo
 
     public GameObject selectedUnitHighlight; //miejsce na podświetlenie wybranej jednostki
+
+    public Image playerIndicator;
+    public Sprite player1Indicator;
+    public Sprite player2Indicator;
 
     public void ResetTiles() //resetuje podświetlenie tilów
     {
@@ -20,7 +25,7 @@ public class GameMaster : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) //jeżeli gracz nadusi wybrany przycisk = kończy swoją ture
+        if (Input.GetKeyDown(KeyCode.Space)) //jeżeli gracz wcisnie wybrany przycisk = kończy swoją ture
         {
             EndTurn();
         }
@@ -41,9 +46,11 @@ public class GameMaster : MonoBehaviour
         if (playerTurn == 1)
         {
             playerTurn = 2;
+            playerIndicator.sprite = player2Indicator;
         }else if (playerTurn == 2)
         {
             playerTurn = 1;
+            playerIndicator.sprite = player1Indicator;
         }
 
         if (selectedUnit != null) //gdyby poprzedni gracz zostawił jakąś jednostkę zaznaczoną - odznacza ją
