@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,7 +34,7 @@ public class Unit : MonoBehaviour
 
     private Animator camAnim; //animator kamery
 
-    public Text kingHealth;
+    public TextMeshProUGUI kingHealth;
     public bool isKing;
 
     private void Start()

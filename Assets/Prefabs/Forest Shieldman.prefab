@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 92152009005647825}
   - component: {fileID: 92152009005647826}
   - component: {fileID: 92152009005647827}
+  - component: {fileID: 5167278476413537431}
   m_Layer: 8
   m_Name: Forest Shieldman
   m_TagString: Untagged
@@ -106,6 +107,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverAmount: 0.1
+--- !u!114 &5167278476413537431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92152009005647828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b36889c0184174abd8622e3c37b3e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 70
 --- !u!1 &1460010461208937713
 GameObject:
   m_ObjectHideFlags: 0
