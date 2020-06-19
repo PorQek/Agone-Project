@@ -52,5 +52,37 @@ public class UnitShop : MonoBehaviour
             gm.player1Gold -= item.cost;
             player1Menu.SetActive(false);
         }
+        else if(gm.playerTurn == 2 && item.cost <= gm.player2Gold)
+        {
+            gm.player2Gold -= item.cost;
+            player2Menu.SetActive(false);
+        }
+        else
+        {
+            print("NOT ENOUGH GOLD!");
+            return;
+        }
+
+        gm.UpdateGoldText();
+
+        gm.purchasedItem = item;
+
+        if (gm.selectedUnit != null)
+        {
+            gm.selectedUnit.selected = false;
+            gm.selectedUnit = null;
+        }
+        GetCreatableTiles();
+    }
+
+    void GetCreatableTiles()
+    {
+        foreach (Tile tile in FindObjectsOfType<Tile>())
+        {
+            if (tile.IsClear())
+            {
+                tile.SetCreatable();
+            }
+        }
     }
 }

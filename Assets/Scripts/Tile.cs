@@ -15,6 +15,9 @@ public class Tile : MonoBehaviour
     public bool isWalkable;
     GameMaster gm;
 
+    public Color creatableColor;
+    public bool isCreatable;
+
     private void Start()
     {
         rend = GetComponent<SpriteRenderer>();
@@ -56,6 +59,13 @@ public class Tile : MonoBehaviour
     {
         rend.color = Color.white;
         isWalkable = false;
+        isCreatable = false;
+    }
+
+    public void SetCreatable()
+    {
+        rend.color = creatableColor;
+        isCreatable = true;
     }
 
     private void OnMouseDown()
@@ -63,6 +73,17 @@ public class Tile : MonoBehaviour
         if (isWalkable && gm.selectedUnit != null)
         {
             gm.selectedUnit.Move(this.transform.position);
+        }
+        else if (isCreatable == true)
+        {
+            ShopItem item = Instantiate(gm.purchasedItem, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+            gm.ResetTiles();
+            Unit unit = item.GetComponent<Unit>();
+            if(unit != null)
+            {
+                unit.hasMoved = true;
+                unit.hasAttacked = true;
+            }
         }
     }
 }

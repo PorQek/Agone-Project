@@ -23,6 +23,8 @@ public class GameMaster : MonoBehaviour
     public TextMeshProUGUI player1GoldText;
     public TextMeshProUGUI player2GoldText;
 
+    public ShopItem purchasedItem;
+
     private void Start()
     {
         GetGoldIncome(1);

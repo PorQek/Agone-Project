@@ -203,7 +203,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 13116681}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 275061276}
+        m_MethodName: BuyItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: -380962124746440446, guid: 10ae97e2754fb314e8b9028ac63ded36,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: ShopItem, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &13116681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2029,7 +2041,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 246628821}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 275061276}
+        m_MethodName: BuyItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: -6799628909157498794, guid: 96d84b5b811093948bd73b61d29a9e36,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: ShopItem, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &246628821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2391,6 +2415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 275061275}
   - component: {fileID: 275061274}
+  - component: {fileID: 275061276}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -2418,6 +2443,11 @@ MonoBehaviour:
     type: 3}
   player2Indicator: {fileID: -485414252094728221, guid: e8797059658254a4db54008b1f9ef255,
     type: 3}
+  player1Gold: 100
+  player2Gold: 100
+  player1GoldText: {fileID: 1322940980}
+  player2GoldText: {fileID: 317224197}
+  purchasedItem: {fileID: 0}
 --- !u!4 &275061275
 Transform:
   m_ObjectHideFlags: 0
@@ -2432,6 +2462,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &275061276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275061273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f3e3cbf8346cd44cb8cdfe1b570cc6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1ToogleButton: {fileID: 2002324997}
+  player2ToogleButton: {fileID: 1054553319}
+  player1Menu: {fileID: 816453421}
+  player2Menu: {fileID: 1482785276}
 --- !u!1 &282234255
 GameObject:
   m_ObjectHideFlags: 0
@@ -3260,7 +3306,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 426131552}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 275061276}
+        m_MethodName: BuyItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1873936111597162723, guid: bdb4ccb3cf07303419000f1642e17653,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: ShopItem, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &426131552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4047,7 +4105,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 514469125}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 275061276}
+        m_MethodName: BuyItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5167278476413537431, guid: 78e7c6bbc28cdab438728dacaa76720d,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: ShopItem, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &514469125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5096,7 +5166,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 639447047}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 275061276}
+        m_MethodName: BuyItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 653124638761109547, guid: 1565af7368e629e41b34f74622e2f825,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: ShopItem, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &639447047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5526,7 +5608,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 677996222}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 275061276}
+        m_MethodName: BuyItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: -9129007118482841047, guid: 6bc4a8c4dbc071345a8683dad338b66f,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: ShopItem, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &677996222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6685,7 +6779,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &816453422
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8497,6 +8591,7 @@ GameObject:
   - component: {fileID: 1054553316}
   - component: {fileID: 1054553318}
   - component: {fileID: 1054553317}
+  - component: {fileID: 1054553319}
   m_Layer: 0
   m_Name: Open/Close Icon
   m_TagString: Untagged
@@ -8559,6 +8654,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1054553315}
   m_CullTransparentMesh: 0
+--- !u!114 &1054553319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054553315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1054553317}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 275061276}
+        m_MethodName: ToogleMenu
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1482785276}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1074154447
 GameObject:
   m_ObjectHideFlags: 0
@@ -12953,7 +13102,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1765730246}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 275061276}
+        m_MethodName: BuyItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4906244572864735118, guid: 47bf56839853988489e194a646a644f0,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: ShopItem, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1765730246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13659,7 +13820,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1867679222}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 275061276}
+        m_MethodName: BuyItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: -3677114195114554421, guid: de767b2e46615ff4db406ff5e1078c82,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: ShopItem, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1867679222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14718,6 +14891,7 @@ GameObject:
   - component: {fileID: 2002324994}
   - component: {fileID: 2002324996}
   - component: {fileID: 2002324995}
+  - component: {fileID: 2002324997}
   m_Layer: 0
   m_Name: Open/Close Icon
   m_TagString: Untagged
@@ -14780,6 +14954,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002324993}
   m_CullTransparentMesh: 0
+--- !u!114 &2002324997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002324993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2002324995}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 275061276}
+        m_MethodName: ToogleMenu
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 816453421}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2022145222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15591,7 +15819,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2105206409
 RectTransform:
   m_ObjectHideFlags: 0
